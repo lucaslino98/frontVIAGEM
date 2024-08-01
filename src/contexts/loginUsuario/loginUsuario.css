@@ -1,0 +1,98 @@
+.nameCabecalho {
+    width: 100%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.nameCabecalho h2 {
+    font-size: 5vw;
+    padding: 5px;
+}
+
+.divLogin {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 70%;
+}
+
+.divLogin button,
+input {
+    width: 90%;
+    max-width: 400px;
+    height: 60px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+.divLogin button:hover {
+    background-color: #8d8d8d;
+    border: 1px solid #8d8d8d;
+}
+
+.divLogin input {
+    padding-left: 15px;
+}
+
+.divLogin label {
+    width: 90%;
+    max-width: 390px;
+    display: flex;
+    text-align: start;
+}
+
+@media (max-width: 768px) {
+    .nameCabecalho {
+        font-size: 5vw;
+    }
+
+    .nameCabecalho h2 {
+        font-size: 10vw;
+    }
+
+    .divLogin button,
+    input {
+        width: 95%;
+    }
+
+    .divLogin label {
+        width: 95%;
+    }
+}
+
+@media (max-width: 480px) {
+    .logUsuario {
+        width: 100%;
+        height: auto;
+    }
+
+    .englobarLogin {
+        width: 100%;
+        height: auto;
+    }
+
+    .nameCabecalho {
+        font-size: 6vw;
+    }
+
+    .nameCabecalho h2 {
+        font-size: 12vw;
+    }
+
+    .divLogin button,
+    input {
+        width: 100%;
+    }
+
+    .divLogin label {
+        width: 100%;
+    }
+}
