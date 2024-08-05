@@ -1,21 +1,26 @@
-import { useForm } from "react-hook-form"
-import './cadastroUsuario.css'
-import PageLogin from '../../pages/login/pageLogin'
+import { useForm } from "react-hook-form";
+import './cadastroUsuario.css';
 
 function CadastroUsuario() {
-    const { register, handleSubmit, formState } = useForm({})
+    const { handleSubmit, register, formState: { errors } } = useForm();
 
-    const { errors, isSubmitting } = formState;
-    console.log(errors)
-    const handleSubmitData = (data) => {
-        console.log('submit', data)
+    async function onSubmit(data) {
+        try {
+            const isSuccess = await signUp(data);
+            console.log(isSuccess);
+            if (isSuccess) {
+            } else {
+                alert('Erro ao tentar cadastrar');
+            }
+        } catch (error) {
+            console.log('Erro ao tentar cadastrar', error.message);
+        }
     }
+
     return (
         <>
-            <form className="formUsuario" onSubmit={handleSubmit(handleSubmitData)}>
-
+            <form className="formUsuario" onSubmit={handleSubmit(onSubmit)}>
                 <div className="formHeader">
-
                     <div className="cadastroInputs">
                         <label htmlFor="nome">Nome</label>
                         <input
@@ -27,7 +32,6 @@ function CadastroUsuario() {
                         />
                         {errors.nome && errors.nome.type === 'required' && <p className="errorForm">{errors.nome.message || 'nome é obrigatório'}</p>}
                     </div>
-
 
                     <div className="cadastroInputs">
                         <label htmlFor="sexo">Sexo</label>
@@ -52,6 +56,7 @@ function CadastroUsuario() {
                             placeholder="Digite seu CPF (Apenas números)"
                             {...register('cpf', { required: true })}
                         />
+                        {errors.cpf && <p className="errorForm">{errors.cpf.message || 'CPF é obrigatório'}</p>}
 
                         <label htmlFor="dataNascimento">Data de Nascimento</label>
                         <input
@@ -60,7 +65,7 @@ function CadastroUsuario() {
                             id="date"
                             {...register('date', { required: true })}
                         />
-
+                        {errors.date && <p className="errorForm">{errors.date.message || 'Data de Nascimento é obrigatória'}</p>}
                     </div>
 
                     <div className="cadastroInputs">
@@ -72,6 +77,7 @@ function CadastroUsuario() {
                             placeholder="Digite um email válido"
                             {...register('email', { required: true })}
                         />
+                        {errors.email && <p className="errorForm">{errors.email.message || 'Email é obrigatório'}</p>}
 
                         <label htmlFor="password">Senha</label>
                         <input
@@ -81,13 +87,14 @@ function CadastroUsuario() {
                             placeholder="Digite uma senha"
                             {...register('password', { required: true })}
                         />
+                        {errors.password && <p className="errorForm">{errors.password.message || 'Senha é obrigatória'}</p>}
                     </div>
 
-                    <button type="submit"className="btnCadastroUsuario">Cadastrar</button>
+                    <button type="submit" className="btnCadastroUsuario">Cadastrar</button>
                 </div>
             </form>
         </>
     )
 }
 
-export default CadastroUsuario
+export default CadastroUsuario;

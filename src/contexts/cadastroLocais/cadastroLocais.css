@@ -1,0 +1,129 @@
+.formCadastroLocal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    color: var(--color1);
+}
+
+.layouCadastro {
+    background-color: var(--color2);
+    width: 60%;
+    height: 70%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.nameLocal {
+    display: flex;
+    justify-content: center;
+    font-size: 24px;
+    padding: 20px;
+    height: 20%;
+    width: 70%;
+}
+
+.cadastroLocalInf {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    padding: 20px;
+}
+
+.cadastroLocalInf input {
+    padding: 15px;
+    width: 80%;
+    height: 45px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    color: #807F79;
+    box-sizing: border-box;
+}
+
+.btnCadastroLocal {
+    width: 53%;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 5px;
+    border: none;
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+    .layouCadastro {
+        width: 80%;
+        height: auto;
+        padding: 10px;
+    }
+
+    .nameLocal {
+        font-size: 20px;
+        width: 90%;
+    }
+
+    .cadastroLocalInf {
+        width: 90%;
+    }
+
+    .cadastroLocalInf input {
+        width: 100%;
+        height: 40px;
+    }
+
+    .btnCadastroLocal {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .layouCadastro {
+        width: 90%;
+        height: auto;
+        padding: 10px;
+    }
+
+    .nameLocal {
+        font-size: 18px;
+        width: 100%;
+    }
+
+    .cadastroLocalInf {
+        width: 100%;
+    }
+
+    .cadastroLocalInf input {
+        width: 100%;
+        height: 40px;
+    }
+
+    .btnCadastroLocal {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .nameLocal {
+        font-size: 16px;
+    }
+
+    .cadastroLocalInf input {
+        padding: 10px;
+        height: 35px;
+    }
+
+    .btnCadastroLocal {
+        padding: 8px;
+        font-size: 14px;
+    }
+}

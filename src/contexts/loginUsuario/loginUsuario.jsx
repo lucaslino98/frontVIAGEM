@@ -3,7 +3,7 @@ import { useAuth } from '../auth/auth';
 import { useForm } from 'react-hook-form';
 import './loginUsuario.css';
 
-function LoginUsuario() {
+function LoginUsuario({toggleComponent}) {
     const { signIn } = useAuth();
     const { handleSubmit, register, formState: { errors } } = useForm();
     const navigate = useNavigate();
@@ -13,7 +13,7 @@ function LoginUsuario() {
             const isSuccess = await signIn(data);
             console.log(isSuccess);
             if (isSuccess) {
-                navigate('/cadastro');
+                navigate('/dashboard');
             } else {
                 alert('Email/senha inválidos');
             }
@@ -21,6 +21,8 @@ function LoginUsuario() {
             console.log('Erro ao tentar fazer login', error.message);
         }
     }
+
+   
 
     return (
         <div className="logUsuario">
@@ -49,7 +51,7 @@ function LoginUsuario() {
                     {errors.password && <p className="error">{errors.password.message}</p>}
 
                     <button type="submit" className="btnEntrar">Entrar</button>
-                    <Link to='/cadastro' className="btnCadastrar"><button>Cadastrar</button></Link>
+                    <button className="btnCadastrar" onClick={toggleComponent}>Cadastrar</button>
                 </form>
             </div>
         </div>

@@ -1,9 +1,16 @@
-import imgPG from './aviao.jpg'
-import './pageLogin.css'
-import LoginUsuario from '../../contexts/loginUsuario/loginUsuario'
-
+import React, { useState } from 'react';
+import imgPG from './aviao.jpg';
+import './pageLogin.css';
+import LoginUsuario from '../../contexts/loginUsuario/loginUsuario';
+import CadastroUsuario from '../../contexts/cadastroUsuario/cadastroUsuario';
 
 function PageLogin() {
+    const [isLogin, setIsLogin] = useState(true);
+
+    const toggleComponent = () => {
+        setIsLogin(!isLogin);
+    };
+
     return (
         <>
             <div className="pagLogin">
@@ -12,17 +19,16 @@ function PageLogin() {
                 </div>
 
                 <div className="compPage">
-
-
                     <div className='atriLogin'>
-                       <LoginUsuario/>
+                        {isLogin ? 
+                            <LoginUsuario toggleComponent={toggleComponent} /> : 
+                            <CadastroUsuario toggleComponent={toggleComponent} />
+                        }
                     </div>
-
                 </div>
-
             </div>
         </>
-    )
+    );
 }
 
-export default PageLogin
+export default PageLogin;
