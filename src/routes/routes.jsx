@@ -3,6 +3,7 @@ import { AuthProvider } from '../contexts/auth/auth';
 import PageLogin from '../pages/login/pageLogin'
 import CadastroUsuario from '../contexts/cadastroUsuario/cadastroUsuario'
 import Dashboard from '../pages/dashboard/dashboard';
+import DashOptions from '../contexts/dashOptions/dashOpt';
 function RoutesComponent() {
     return (
         <>
@@ -13,6 +14,7 @@ function RoutesComponent() {
                         <Route path='/' element={<PageLogin />} />
                         <Route path='/cadastro' element={<CadastroUsuario />} />
                         <Route path='/dashboard' element={<Dashboard />} />
+                        <Route path='/dashOptions' element={<DashOptions />} />
 
                     </Routes>
                 </BrowserRouter>

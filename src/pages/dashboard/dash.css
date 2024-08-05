@@ -28,6 +28,12 @@
     width: 15%;
 }
 
+.dashLink {
+    width: 100%;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 .dashLista,
 .dashSair {
     display: flex;
@@ -170,7 +176,7 @@
     .dashCentral {
         flex-direction: column;
     }
-    
+
     .imgDashMenu {
         height: 0px;
         width: 0px;
