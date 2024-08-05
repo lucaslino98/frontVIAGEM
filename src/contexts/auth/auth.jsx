@@ -1,6 +1,5 @@
 import { createContext, useContext, useState } from 'react';
 
-// Atualize este caminho para corresponder à sua configuração
 const API_URL = 'http://localhost:3000';
 
 export const AuthContext = createContext({
