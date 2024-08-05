@@ -23,8 +23,16 @@
     height: 70%;
 }
 
+.btnCadastrar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    text-decoration: none;
+}
+
 .divLogin button,
-input {
+.divLogin input {
     width: 90%;
     max-width: 400px;
     height: 60px;
@@ -59,7 +67,7 @@ input {
     }
 
     .divLogin button,
-    input {
+    .divLogin input {
         width: 95%;
     }
 
@@ -88,7 +96,7 @@ input {
     }
 
     .divLogin button,
-    input {
+    .divLogin input {
         width: 100%;
     }
 
