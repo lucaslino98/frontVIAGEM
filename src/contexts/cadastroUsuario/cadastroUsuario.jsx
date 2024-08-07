@@ -1,25 +1,37 @@
 import { useForm } from "react-hook-form";
 import './cadastroUsuario.css';
 
-function CadastroUsuario() {
-    const { handleSubmit, register, formState: { errors } } = useForm();
 
-    async function onSubmit(data) {
+
+function CadastroUsuario() {
+
+    const { handleSubmit, register, formState: { errors, isSubmitting } } = useForm();
+
+
+    async function addUser(dados) {
         try {
-            const isSuccess = await signUp(data);
-            console.log(isSuccess);
-            if (isSuccess) {
+            const resposta = await fetch('http://localhost:3000/users', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(dados)
+            });
+
+            if (!resposta.ok) {
+                alert("Houve um erro ao cadastrar usuário.");
             } else {
-                alert('Erro ao tentar cadastrar');
+                alert("Cadastrado com sucesso!");
             }
+
         } catch (error) {
-            console.log('Erro ao tentar cadastrar', error.message);
+            alert("Houve um erro ao cadastrar usuário.");
         }
     }
 
     return (
         <>
-            <form className="formUsuario" onSubmit={handleSubmit(onSubmit)}>
+            <form className="formUsuario" onSubmit={handleSubmit(addUser)}>
                 <div className="formHeader">
                     <div className="cadastroInputs">
                         <label htmlFor="nome">Nome</label>
@@ -41,7 +53,7 @@ function CadastroUsuario() {
                             id="sexo"
                             {...register('sexo', { required: true })}
                         >
-                            <option value="0">Selecione seu Sexo</option>
+                            <option value="">Selecione seu Sexo</option>
                             <option value="masculino">Masculino</option>
                             <option value="feminino">Feminino</option>
                         </select>
