@@ -1,21 +1,69 @@
 {
-    "users": [
-        {
-            "nome": "Lucas Lino Martins",
-            "sexo": "masculino",
-            "cpf": "089.642.919-99",
-            "date": "2012-12-12",
-            "email": "lucaslino.martins@hotmail.com",
-            "password": "123",
-            "id": 9
-        }
-    ],
-    "local": [
-        {
-            "local_name": "1",
-            "descricao": "2",
-            "local": "dsa",
-            "id": 4
-        }
-    ]
+  "users": [
+    {
+      "nome": "Lucas Lino Martins",
+      "sexo": "masculino",
+      "cpf": "089.642.919-99",
+      "date": "2012-12-12",
+      "email": "lucaslino.martins@hotmail.com",
+      "password": "123",
+      "id": 9
+    }
+  ],
+  "local": [
+    {
+      "local_name": "Praia de canto dos Ganchos",
+      "descricao": "Local muito atraente",
+      "local": "88190000",
+      "id": 5
+    },
+    {
+      "local_name": "1",
+      "descricao": "1",
+      "local": "2222",
+      "latitude": "",
+      "longitude": "",
+      "id": 6
+    },
+    {
+      "local_name": "Praia canto",
+      "descricao": "Muito boa",
+      "local": "88190000",
+      "latitude": "",
+      "longitude": "",
+      "id": 7
+    },
+    {
+      "local_name": "Praia canto",
+      "descricao": "Muito boa",
+      "local": "881900002",
+      "latitude": "",
+      "longitude": "",
+      "id": 8
+    },
+    {
+      "local_name": "Praia canto",
+      "descricao": "Muito boa",
+      "local": "881900002",
+      "latitude": "",
+      "longitude": "",
+      "id": 9
+    },
+    {
+      "local_name": "a",
+      "descricao": "dasdas",
+      "local": "88190000",
+      "latitude": "",
+      "longitude": "",
+      "id": 10
+    },
+    {
+      "local_name": "a",
+      "descricao": "dasdas",
+      "local": "88190000",
+      "latitude": "-27.347758223287673",
+      "longitude": "-48.551739778082194",
+      "id": 11
+    }
+  ]
 }

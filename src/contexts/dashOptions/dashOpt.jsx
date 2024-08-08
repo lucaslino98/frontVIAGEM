@@ -41,7 +41,7 @@ function DashOptions() {
                         <div className='dashUsuarioContador'>
 
                             <span>Locais</span>
-                            <span>1</span>
+                            <span>{locais.length}</span>
                         </div>
                         <img src={LogoHome} />
                     </div>
@@ -59,12 +59,17 @@ function DashOptions() {
                         <div className='dashNameUsuarioLocal'>
                             <h3>Local</h3>
                             <h3>Descrição</h3>
+                            <h3>Latitude</h3>
+                            <h3>Logitude</h3>
                         </div>
 
                         {locais.map((local, index) => (
                             <div key={index} className='dashNameUsuarioLocal'>
                                 <h4>{local.local_name}</h4>
                                 <h4>{local.descricao}</h4>
+                                <h4>{local.latitude}</h4>
+                                <h4>{local.longitude}</h4>
+
                             </div>
                         ))}
 
