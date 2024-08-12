@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 function DashOptions() {
 
     const [locais, setLocais] = useState([]);
-
+    const [users, setUsers] = useState([]);
     useEffect(() => {
         async function fetchLocais() {
             try {
@@ -20,6 +20,22 @@ function DashOptions() {
         }
 
         fetchLocais();
+
+        async function fetchUsers() {
+            try {
+                const response = await fetch('http://localhost:3000/users');
+                if (response.ok) {
+                    const data = await response.json();
+                    setUsers(data);
+                } else {
+                    console.error('Erro ao buscar Usuarios');
+                }
+            } catch (error) {
+                console.error('Erro ao buscar Usuarios:', error);
+            }
+        }
+        fetchUsers();
+
     }, []);
     return (
         <>
@@ -27,9 +43,8 @@ function DashOptions() {
                 <div className='dashInflocalUsu'>
                     <div className="dashUsuario">
                         <div className='dashUsuarioContador'>
-
                             <span>Usuários</span>
-                            <span>1</span>
+                            <span>{users.length}</span>
                         </div>
                         <img src={LogoHome} />
 
@@ -48,35 +63,30 @@ function DashOptions() {
                 </div>
 
 
-                <div className="dashLocalUsuario">
-
-                    <div className="dashTituloLocal">
-                        <h2>Locais</h2>
-                        <span>Listagem dos Locais cadastrados</span>
-                    </div>
-
-                    <div className='dashTable'>
-                        <div className='dashNameUsuarioLocal'>
-                            <h3>Local</h3>
-                            <h3>Descrição</h3>
-                            <h3>Latitude</h3>
-                            <h3>Logitude</h3>
-                        </div>
-
+                <table className="dashLocalUsuario">
+                    <thead className='dashTable'>
+                        <tr className='dashNameUsuarioLocal'>
+                            <th>Local</th>
+                            <th>Descrição</th>
+                            <th>Latitude</th>
+                            <th>Longitude</th>
+                        </tr>
+                    </thead>
+                    <tbody className='dashTable'>
                         {locais.map((local, index) => (
-                            <div key={index} className='dashNameUsuarioLocal'>
-                                <h4>{local.local_name}</h4>
-                                <h4>{local.descricao}</h4>
-                                <h4>{local.latitude}</h4>
-                                <h4>{local.longitude}</h4>
-
-                            </div>
+                            <tr className='dashNameUsuarioLocal' key={index}>
+                                <td>{local.local_name}</td>
+                                <td>{local.descricao}</td>
+                                <td>{local.latitude}</td>
+                                <td>{local.longitude}</td>
+                            </tr>
                         ))}
+                    </tbody>
+                </table>
 
-                    </div>
 
 
-                </div>
+
 
             </div>
         </>

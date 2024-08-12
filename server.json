@@ -12,12 +12,6 @@
   ],
   "local": [
     {
-      "local_name": "Praia de canto dos Ganchos",
-      "descricao": "Local muito atraente",
-      "local": "88190000",
-      "id": 5
-    },
-    {
       "local_name": "1",
       "descricao": "1",
       "local": "2222",
@@ -26,44 +20,36 @@
       "id": 6
     },
     {
-      "local_name": "Praia canto",
-      "descricao": "Muito boa",
+      "local_name": "Praia",
+      "descricao": "canto",
       "local": "88190000",
-      "latitude": "",
-      "longitude": "",
+      "latitude": "-27.347758223287673",
+      "longitude": "-48.551739778082194",
       "id": 7
     },
     {
-      "local_name": "Praia canto",
-      "descricao": "Muito boa",
-      "local": "881900002",
+      "local_name": "das",
+      "descricao": "2322",
+      "local": "3333",
       "latitude": "",
       "longitude": "",
       "id": 8
     },
     {
-      "local_name": "Praia canto",
-      "descricao": "Muito boa",
-      "local": "881900002",
+      "local_name": "das",
+      "descricao": "2322",
+      "local": "33334444",
       "latitude": "",
       "longitude": "",
       "id": 9
     },
     {
-      "local_name": "a",
-      "descricao": "dasdas",
-      "local": "88190000",
+      "local_name": "dasAAAAADS",
+      "descricao": "2322SDSD",
+      "local": "33334444",
       "latitude": "",
       "longitude": "",
       "id": 10
-    },
-    {
-      "local_name": "a",
-      "descricao": "dasdas",
-      "local": "88190000",
-      "latitude": "-27.347758223287673",
-      "longitude": "-48.551739778082194",
-      "id": 11
     }
   ]
 }

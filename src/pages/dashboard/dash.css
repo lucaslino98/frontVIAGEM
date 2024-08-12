@@ -166,6 +166,14 @@
     margin: 5px;
 }
 
+.dashNameUsuarioLocal td {
+    width: 10%;
+    display: flex;
+    justify-content: center;
+}
+
+
+
 .dashNameUsuarioLocal h4,
 .dashNameUsuarioLocal h3 {
     display: flex;
