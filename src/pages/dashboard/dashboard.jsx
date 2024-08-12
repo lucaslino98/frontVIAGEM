@@ -36,7 +36,7 @@ function Dashboard() {
                         <span>Locais</span>
                     </li>
 
-                    <Link to='/' className='dashLink'>
+                    <Link to='/users' className='dashLink'>
                         <li>
                             <img src={LogoHome} alt="Logo Usuários" />
                             <span>Usuários</span>
