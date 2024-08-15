@@ -1,11 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import LogoHome from './casa.png';
+import MapComponent from '../mapas/mapas'
 
 function DashOptions() {
     const [locais, setLocais] = useState([]);
     const [users, setUsers] = useState([]);
-    const [editingLocal, setEditingLocal] = useState(null); 
+    const [editingLocal, setEditingLocal] = useState(null);
     const [formValues, setFormValues] = useState({ local_name: '', descricao: '', latitude: '', longitude: '' });
+    const [showMapModal, setShowMapModal] = useState(false);
+    const [selectedLocal, setSelectedLocal] = useState(null);
 
     useEffect(() => {
         async function fetchLocais() {
@@ -57,7 +60,7 @@ function DashOptions() {
             if (response.ok) {
                 alert('Local atualizado com sucesso!');
                 setEditingLocal(null);
-                setLocais(locais.map(local => (local.id === id ? formValues : local)));
+                setLocais(locais.map(local => (local.id === id ? { ...local, ...formValues } : local)));
             } else {
                 alert('Erro ao atualizar o local.');
             }
@@ -66,9 +69,35 @@ function DashOptions() {
         }
     }
 
+    async function handleDeleteClick(id) {
+        try {
+            const response = await fetch(`http://localhost:3000/local/${id}`, {
+                method: 'DELETE',
+            });
+            if (response.ok) {
+                alert('Local deletado com sucesso!');
+                setLocais(locais.filter(local => local.id !== id));
+            } else {
+                alert('Erro ao deletar o local.');
+            }
+        } catch (error) {
+            console.error('Erro ao deletar local:', error);
+        }
+    }
+
     function handleInputChange(e) {
         const { name, value } = e.target;
         setFormValues({ ...formValues, [name]: value });
+    }
+
+    function handleMapClick(local) {
+        setSelectedLocal(local);
+        setShowMapModal(true);
+    }
+
+    function closeModal() {
+        setShowMapModal(false);
+        setSelectedLocal(null);
     }
 
     return (
@@ -112,6 +141,8 @@ function DashOptions() {
                                         <td>{local.longitude}</td>
                                         <td>
                                             <button className='btnAgora' onClick={() => handleEditClick(local)}>Editar</button>
+                                            <button className='btnAgora' onClick={() => handleDeleteClick(local.id)}>Deletar</button>
+                                            <button className='btnAgora' onClick={() => handleMapClick(local)}>Mapa</button>
                                         </td>
                                     </tr>
                                     {editingLocal === local.id && (
@@ -157,6 +188,22 @@ function DashOptions() {
                     </table>
                 </div>
             </div>
+
+            {showMapModal && (
+                <div className="modal">
+                    <div className="modalContent">
+                        <h2>Mapa do Local</h2>
+                        <p>Nome: {selectedLocal.local_name}</p>
+                        <p>Descrição: {selectedLocal.descricao}</p>
+                        <p>Latitude: {selectedLocal.latitude}</p>
+                        <p>Longitude: {selectedLocal.longitude}</p>
+                        <div className='card-map'>
+                            <MapComponent latitude={selectedLocal.latitude} longitude={selectedLocal.longitude} />
+                        </div>
+                        <button onClick={closeModal}>Fechar</button>
+                    </div>
+                </div>
+            )}
         </>
     );
 }

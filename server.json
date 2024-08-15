@@ -7,48 +7,16 @@
       "date": "2012-12-12",
       "email": "lucaslino.martins@hotmail.com",
       "password": "123",
-      "id": 9
+      "id": "9"
     }
   ],
   "local": [
     {
-      "local_name": "2",
-      "descricao": "1",
-      "latitude": "",
-      "longitude": "",
-      "id": 6
-    },
-    {
-      "local_name": "Praia",
-      "descricao": "canto",
-      "local": "88190000",
+      "local_name": "a",
+      "descricao": "2",
       "latitude": "-27.347758223287673",
       "longitude": "-48.551739778082194",
-      "id": 7
-    },
-    {
-      "local_name": "das",
-      "descricao": "2322",
-      "local": "3333",
-      "latitude": "",
-      "longitude": "",
-      "id": 8
-    },
-    {
-      "local_name": "das",
-      "descricao": "2322",
-      "local": "33334444",
-      "latitude": "",
-      "longitude": "",
-      "id": 9
-    },
-    {
-      "local_name": "dasAAAAADS",
-      "descricao": "2322SDSD",
-      "local": "33334444",
-      "latitude": "",
-      "longitude": "",
-      "id": 10
+      "id": "CF-c__7"
     }
   ]
 }

@@ -70,24 +70,45 @@ function CadastroLocais() {
                             type="text"
                             id="local_name"
                             placeholder="Digite o nome do Local"
-                            {...register('local_name', { required: true })}
+                            {...register('local_name', { 
+                                required: "Nome do local é obrigatório", 
+                                minLength: {
+                                    value: 3, 
+                                    message: "Nome do local deve ter pelo menos 3 caracteres"
+                                } 
+                            })}
                         />
+                        {errors.local_name && <p style={{ color: 'red' }}>{errors.local_name.message}</p>}
 
                         <label htmlFor="descricao">Descrição do Local</label>
                         <input
                             type="text"
                             id="descricao"
                             placeholder="Descreva o local em poucas palavras"
-                            {...register('descricao', { required: true })}
+                            {...register('descricao', { 
+                                required: "Descrição do local é obrigatória", 
+                                minLength: {
+                                    value: 10, 
+                                    message: "Descrição deve ter pelo menos 10 caracteres"
+                                } 
+                            })}
                         />
+                        {errors.descricao && <p style={{ color: 'red' }}>{errors.descricao.message}</p>}
 
                         <label htmlFor="local">CEP</label>
                         <input
                             type="text"
                             id="local"
                             placeholder="Digite o CEP"
-                            {...register('local', { required: true })}
+                            {...register('local', { 
+                                required: "CEP é obrigatório", 
+                                pattern: {
+                                    value: /^[0-9]{8}$/, 
+                                    message: "CEP deve conter 8 números"
+                                } 
+                            })}
                         />
+                        {errors.local && <p style={{ color: 'red' }}>{errors.local.message}</p>}
                     </div>
                     <button type="submit" className="btnCadastroLocal">Cadastrar</button>
                 </div>

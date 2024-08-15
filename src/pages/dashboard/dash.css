@@ -177,7 +177,7 @@
 .editForm {
     display: flex;
     flex-direction: row;
-    justify-content: space-between; 
+    justify-content: space-between;
     align-items: center;
     gap: 46px;
     border-radius: 5px;
@@ -189,8 +189,8 @@
     border-radius: 5px;
     border: 1px solid #ccc;
     color: #807F79;
-    flex: 1; 
-    margin: 0 10px; 
+    flex: 1;
+    margin: 0 10px;
 }
 
 
@@ -203,7 +203,37 @@
 }
 
 .btnAgora {
- 
+    background-color: #fff;
+    display: flex;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 10px;
+    width: 28%;
+    margin: 2px;
+    text-align: center;
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modalContent {
+    width: 50%;
+    height: 50%;
+    background-color: var(--color1);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
 }
 
 
