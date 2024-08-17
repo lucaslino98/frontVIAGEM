@@ -1,0 +1,23 @@
+.btnTodo {
+    display: flex;
+    justify-content: center;
+}
+
+.dashLinke {
+    text-decoration: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+
+.btnVoltar {
+    width: 23%;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    color: #000;
+    cursor: pointer;
+}
