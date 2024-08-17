@@ -8,6 +8,15 @@
       "email": "lucaslino.martins@hotmail.com",
       "password": "123",
       "id": "9"
+    },
+    {
+      "nome": "ADMIN",
+      "sexo": "masculino",
+      "cpf": "00000000000",
+      "date": "1998-04-06",
+      "email": "admin@admin.com",
+      "password": "admin",
+      "id": "lH3fHTi"
     }
   ],
   "local": [
